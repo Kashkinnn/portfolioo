@@ -692,7 +692,7 @@ html(
     <div class="footer">
         <div style="display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;">
             <span>© 2026 {NAME} · {PROGRAM} {YEAR} · Section {SECTION}</span>
-            <span>Built with Python + Streamlit</span>
+            <span>Built with Python + Claude + Streamlit (Had too much fun vibe coding this)</span>
         </div>
     </div>
     """
