@@ -1,0 +1,398 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap');
+
+html, body, .stApp, [data-testid="stAppViewContainer"] {
+    background:
+        radial-gradient(circle at 12% 8%, __A__22 0%, transparent 38%),
+        radial-gradient(circle at 88% 92%, __B__18 0%, transparent 42%),
+        linear-gradient(180deg, __BG__ 0%, #000000 100%) !important;
+    color: __TEXT__;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.08rem;
+}
+
+header[data-testid="stHeader"] { background: transparent; }
+
+[data-testid="stMainBlockContainer"] {
+    max-width: 1200px;
+    padding-top: 2.2rem;
+    padding-bottom: 4rem;
+    position: relative;
+    z-index: 2;
+}
+
+[data-testid="stSidebar"] {
+    background: linear-gradient(180deg, __SURFACE__ 0%, #000000 100%) !important;
+    border-right: 1px solid __BORDER__;
+    box-shadow: 4px 0 30px __A__18;
+}
+
+h1, h2, h3, h4, h5, p, label, li, span, div, [data-testid="stWidgetLabel"] p {
+    color: __TEXT__;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Orbitron', sans-serif !important;
+    letter-spacing: 0.02em;
+}
+
+h3 { color: __A__ !important; text-shadow: 0 0 14px __A__66; }
+
+p { line-height: 1.7; }
+
+a { color: __B__ !important; text-decoration: none; }
+a:hover { text-shadow: 0 0 10px __B__; }
+
+.eyebrow {
+    color: __B__;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.82rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    margin-bottom: 0.7rem;
+    text-shadow: 0 0 10px __B__88;
+}
+
+.eyebrow::before { content: "// "; color: __A__; }
+
+.hero-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(2.4rem, 6vw, 4.8rem);
+    font-weight: 900;
+    line-height: 1.08;
+    text-transform: uppercase;
+    margin: 0.4rem 0 1.1rem;
+    color: __TEXT__;
+    text-shadow: 0 0 22px __B__55;
+}
+
+.hero-accent {
+    color: __A__;
+    text-shadow: 0 0 8px __A__, 0 0 24px __A__, 0 0 52px __A__88;
+    animation: flicker 5.5s infinite;
+}
+
+@keyframes flicker {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% { opacity: 1; }
+    20%, 24%, 55% { opacity: 0.45; }
+}
+
+.hero-copy {
+    color: __MUTED__;
+    font-size: 1.22rem;
+    max-width: 720px;
+    line-height: 1.75;
+    border-left: 2px solid __A__;
+    padding-left: 1rem;
+}
+
+.panel, .project-card {
+    background: linear-gradient(145deg, __SURFACE__ 0%, #05040a 100%);
+    border: 1px solid __BORDER__;
+    border-left: 3px solid __A__;
+    border-radius: 4px;
+    padding: 1.3rem 1.4rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 0 1px #00000088, 0 10px 34px #000000aa;
+    position: relative;
+}
+
+.project-card {
+    min-height: 330px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    border-color: __B__;
+    border-left-color: __B__;
+    box-shadow: 0 0 26px __B__44, 0 10px 34px #000000aa;
+}
+
+.project-label {
+    color: __B__;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    margin-bottom: 0.6rem;
+}
+
+.outcome {
+    border-top: 1px dashed __BORDER__;
+    margin-top: 0.7rem;
+    padding-top: 0.6rem;
+    color: __ACCENT4__;
+}
+
+.muted { color: __MUTED__ !important; }
+
+.pill {
+    display: inline-block;
+    background: transparent;
+    border: 1px solid __B__88;
+    border-radius: 2px;
+    padding: 0.18rem 0.7rem;
+    margin: 0.2rem 0.3rem 0.2rem 0;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.8rem;
+    color: __B__;
+    box-shadow: inset 0 0 10px __B__18;
+}
+
+.section-label {
+    color: __A__;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.82rem;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    margin-top: 1.6rem;
+    margin-bottom: 0.6rem;
+    text-shadow: 0 0 10px __A__88;
+}
+
+.divider-line {
+    height: 1px;
+    margin: 1.4rem 0;
+    background: linear-gradient(90deg, transparent, __A__, __B__, transparent);
+    box-shadow: 0 0 12px __A__88;
+}
+
+.timeline-item {
+    border-left: 2px solid __B__;
+    padding: 0.2rem 0 1rem 1.1rem;
+    margin-left: 0.4rem;
+    position: relative;
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -7px;
+    top: 0.45rem;
+    width: 12px;
+    height: 12px;
+    background: __A__;
+    box-shadow: 0 0 12px __A__;
+    border-radius: 50%;
+}
+
+.timeline-year {
+    font-family: 'Share Tech Mono', monospace;
+    color: __A__;
+    letter-spacing: 0.15em;
+}
+
+.stButton > button,
+.stDownloadButton > button,
+.stLinkButton > a,
+[data-testid="stFormSubmitButton"] button {
+    background: transparent !important;
+    color: __A__ !important;
+    border: 1px solid __A__ !important;
+    border-radius: 2px !important;
+    font-family: 'Orbitron', sans-serif !important;
+    font-size: 0.78rem !important;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    min-height: 2.8rem;
+    box-shadow: 0 0 12px __A__44, inset 0 0 12px __A__18;
+    transition: all 0.2s ease;
+}
+
+.stButton > button:hover,
+.stDownloadButton > button:hover,
+.stLinkButton > a:hover,
+[data-testid="stFormSubmitButton"] button:hover {
+    background: __A__ !important;
+    color: #000000 !important;
+    box-shadow: 0 0 28px __A__;
+}
+
+.stButton > button p, .stDownloadButton > button p,
+[data-testid="stFormSubmitButton"] button p { color: inherit !important; }
+
+input, textarea {
+    background: #05040a !important;
+    color: __TEXT__ !important;
+    border-radius: 2px !important;
+    font-family: 'Share Tech Mono', monospace !important;
+}
+
+[data-baseweb="input"], [data-baseweb="textarea"], [data-baseweb="select"] > div {
+    background: #05040a !important;
+    border: 1px solid __BORDER__ !important;
+    border-radius: 2px !important;
+}
+
+[data-baseweb="input"]:focus-within, [data-baseweb="textarea"]:focus-within,
+[data-baseweb="select"] > div:focus-within {
+    border-color: __B__ !important;
+    box-shadow: 0 0 14px __B__55;
+}
+
+[data-baseweb="select"] * { color: __TEXT__ !important; }
+
+[data-baseweb="popover"] ul, [data-baseweb="menu"] {
+    background: __SURFACE__ !important;
+    border: 1px solid __BORDER__;
+}
+
+[data-baseweb="popover"] li:hover { background: __A__33 !important; }
+
+[data-baseweb="tag"] {
+    background: __A__33 !important;
+    border: 1px solid __A__;
+    border-radius: 2px !important;
+}
+
+[data-testid="stMetric"] {
+    background: linear-gradient(145deg, __SURFACE__, #05040a);
+    border: 1px solid __BORDER__;
+    border-bottom: 2px solid __B__;
+    border-radius: 3px;
+    padding: 0.9rem 1rem;
+    box-shadow: 0 0 18px __B__18;
+}
+
+[data-testid="stMetricValue"] {
+    font-family: 'Orbitron', sans-serif;
+    color: __B__ !important;
+    text-shadow: 0 0 12px __B__88;
+}
+
+[data-testid="stMetricLabel"] p {
+    font-family: 'Share Tech Mono', monospace;
+    color: __MUTED__ !important;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+[data-testid="stTabs"] button[role="tab"] {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 0.8rem 1.1rem;
+    color: __MUTED__;
+}
+
+[data-testid="stTabs"] button[role="tab"][aria-selected="true"] {
+    color: __A__;
+    text-shadow: 0 0 12px __A__;
+}
+
+[data-testid="stTabs"] [data-baseweb="tab-highlight"] {
+    background: __A__ !important;
+    box-shadow: 0 0 14px __A__;
+}
+
+[data-testid="stTabs"] [data-baseweb="tab-border"] { background: __BORDER__ !important; }
+
+[data-testid="stForm"] {
+    background: #05040acc;
+    border: 1px solid __B__66;
+    border-radius: 3px;
+    box-shadow: 0 0 30px __B__22;
+    padding: 1.4rem;
+}
+
+[data-testid="stExpander"] {
+    background: __SURFACE__;
+    border: 1px solid __BORDER__ !important;
+    border-radius: 3px;
+}
+
+[data-testid="stExpander"] summary p { font-family: 'Orbitron', sans-serif; font-size: 0.85rem; letter-spacing: 0.08em; }
+
+[data-testid="stTable"] table {
+    background: __SURFACE__;
+    border: 1px solid __BORDER__;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.9rem;
+}
+
+[data-testid="stTable"] th {
+    background: #000000 !important;
+    color: __B__ !important;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-bottom: 1px solid __B__ !important;
+}
+
+[data-testid="stTable"] td { color: __TEXT__ !important; border-color: __BORDER__ !important; }
+
+.stProgress > div > div > div { background: #1a1626 !important; border-radius: 0 !important; height: 8px; }
+.stProgress > div > div > div > div {
+    background: linear-gradient(90deg, __A__, __B__) !important;
+    box-shadow: 0 0 12px __A__;
+    border-radius: 0 !important;
+}
+
+[data-testid="stSlider"] [role="slider"] {
+    background: __A__ !important;
+    box-shadow: 0 0 14px __A__;
+}
+
+[data-testid="stSlider"] [data-testid="stThumbValue"] { color: __A__ !important; font-family: 'Share Tech Mono', monospace; }
+
+[data-testid="stImage"] img {
+    border: 1px solid __A__;
+    border-radius: 2px;
+    box-shadow: 0 0 34px __A__66, 0 0 70px __B__22;
+}
+
+[data-testid="stCaptionContainer"] p {
+    color: __MUTED__ !important;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.8rem;
+}
+
+[data-testid="stAlert"] {
+    background: __SURFACE__;
+    border: 1px solid __B__66;
+    border-radius: 3px;
+}
+
+hr { border-color: __BORDER__ !important; }
+
+.footer {
+    border-top: 1px solid __BORDER__;
+    margin-top: 3rem;
+    padding-top: 1.2rem;
+    color: __MUTED__;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.82rem;
+    letter-spacing: 0.1em;
+}
+
+::-webkit-scrollbar { width: 8px; background: #000000; }
+::-webkit-scrollbar-thumb { background: __A__; box-shadow: 0 0 8px __A__; }
+
+.stApp::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    background-image:
+        repeating-linear-gradient(104deg, transparent 0 22px, __B__12 22px 23px, transparent 23px 58px),
+        repeating-linear-gradient(104deg, transparent 0 41px, __A__10 41px 42px, transparent 42px 97px);
+    background-size: 220px 220px, 340px 340px;
+    animation: rain 0.9s linear infinite;
+    opacity: 0.8;
+    display: var(--rain-display, block);
+}
+@keyframes rain {
+    from { background-position: 0 0, 0 0; }
+    to { background-position: -40px 220px, -60px 340px; }
+}
+
+.stApp::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 99;
+    background: repeating-linear-gradient(0deg, #00000000 0 2px, #00000033 2px 3px);
+    mix-blend-mode: multiply;
+    display: var(--scan-display, block);
+}
