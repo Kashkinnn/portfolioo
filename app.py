@@ -194,7 +194,7 @@ PROJECTS = [
     },
     {
         "number": "CASE 003",
-        "name": "AI Chatbot",
+        "name": "PIM (Personal Inferencing Machine)",
         "description": "A locally hosted conversational assistant prototype for answering a defined set of questions.",
         "role": "Developer",
         "tools": ["Bash", "Qwen", "Ollama"],
