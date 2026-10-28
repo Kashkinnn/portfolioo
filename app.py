@@ -152,10 +152,14 @@ SKILLS = pd.DataFrame(
         {"Skill": "Python", "Category": "Languages", "Level": 75},
         {"Skill": "Java", "Category": "Languages", "Level": 65},
         {"Skill": "SQL", "Category": "Languages", "Level": 60},
+        {"Skill": "C#", "Category": "Languages", "Level": 60},
+        {"Skill": "Bash", "Category": "Languages", "Level": 60},
         {"Skill": "HTML / CSS", "Category": "Web", "Level": 60},
         {"Skill": "Streamlit", "Category": "Frameworks", "Level": 65},
+        {"Skill": "Blazor", "Category": "Frameworks", "Level": 55},
         {"Skill": "Git / GitHub", "Category": "Tools", "Level": 65},
-        {"Skill": "Linux", "Category": "Tools", "Level": 55},
+        {"Skill": "Docker", "Category": "Tools", "Level": 65},
+        {"Skill": "Linux", "Category": "Tools", "Level": 60},
     ]
 )
 
@@ -163,8 +167,8 @@ MILESTONES = pd.DataFrame(
     [
         {"Year": "2024", "Milestone": "Started the BSCS program", "Why it mattered": "Turned curiosity into a plan"},
         {"Year": "2025", "Milestone": "Dug into Linux and networking", "Why it mattered": "Saw how systems connect"},
-        {"Year": "2025", "Milestone": "Built first data dashboard", "Why it mattered": "Learned to present data clearly"},
-        {"Year": "2026", "Milestone": "Prototyped an AI chatbot", "Why it mattered": "Got hands-on with local AI"},
+        {"Year": "2025", "Milestone": "Built my first homelab", "Why it mattered": "Learned how servers work"},
+        {"Year": "2026", "Milestone": "Hosted a local AI chatbot", "Why it mattered": "Got hands-on with local AI"},
         {"Year": "2026", "Milestone": "Shipped this Streamlit portfolio", "Why it mattered": "Put everything in one place"},
     ]
 )
@@ -172,36 +176,36 @@ MILESTONES = pd.DataFrame(
 PROJECTS = [
     {
         "number": "CASE 001",
-        "name": "Data Dashboard",
-        "description": "An interactive dashboard for exploring and presenting structured data.",
-        "role": "Developer",
-        "tools": ["Python", "Pandas", "Streamlit"],
-        "outcome": "Working dashboard with filters, tables, and charts.",
+        "name": "Homelab",
+        "description": "A personalized home server built for self-hosting services and experimenting with how servers work.",
+        "role": "Developer / Sysadmin",
+        "tools": ["Debian", "Bash", "Docker"],
+        "outcome": "Working server running a local streaming service and a toolkit of self-hosted tools.",
         "url": "",
     },
     {
         "number": "CASE 002",
-        "name": "E-commerce Backend",
-        "description": "A backend API concept covering product data, requests, and database persistence.",
-        "role": "Backend Developer",
-        "tools": ["Node.js", "Express", "MongoDB"],
-        "outcome": "REST endpoints for products with stored data.",
+        "name": "Archive Of Things",
+        "description": "A localized archive for storing and browsing a personal collection of things.",
+        "role": "Full-Stack Developer",
+        "tools": ["Blazor", "Docker", "C#"],
+        "outcome": "Containerized archive app running locally with stored data.",
         "url": "",
     },
     {
         "number": "CASE 003",
         "name": "AI Chatbot",
-        "description": "A conversational assistant prototype for answering a defined set of questions.",
+        "description": "A locally hosted conversational assistant prototype for answering a defined set of questions.",
         "role": "Developer",
-        "tools": ["Python", "LLM API", "Prompt Design"],
-        "outcome": "Prototype that answers a fixed question set.",
+        "tools": ["Bash", "Qwen", "Ollama"],
+        "outcome": "Prototype that answers a fixed question set using a local model.",
         "url": "",
     },
 ]
 
 PROFILE_TEXT = (
     f"{NAME}\n{PROGRAM} · {YEAR} · Section {SECTION}\n"
-    "Computer science student exploring software development, networking, and local AI.\n"
+    "Computer science student exploring software development, homelabs, networking, and local AI.\n"
     f"GitHub: {GITHUB}\nEmail: {EMAIL}\n"
 )
 
@@ -247,7 +251,7 @@ with hero_left:
         <div class="hero-copy">
             I'm a computer science student exploring software development,
             networking, and the systems behind the tools we use every day.
-            I learn by building, experimenting, and improving real projects. 
+            I learn by building, experimenting, and improving real projects.
             <br>
             <br>
             AND I LOVE NEO NOIR.
@@ -263,13 +267,20 @@ with hero_left:
     m4.metric("Endorsed", st.session_state.endorsements)
 
 with hero_right:
-    photo_path = "photo.jpeg"
-    if os.path.exists(photo_path):
+    photo_path = next(
+        (
+            str(Path(__file__).parent / name)
+            for name in ["photo.jpeg", "photo.jpg", "photo.png"]
+            if (Path(__file__).parent / name).exists()
+        ),
+        None,
+    )
+    if photo_path:
         st.image(photo_path, caption=f"{NAME} // {PROGRAM} · {SECTION}", use_container_width=True)
     else:
         st.image(
             stand_in_portrait(P["RGB"], P["RGB2"]),
-            caption="Photo stand-in // add photo.jpg to replace",
+            caption="Photo stand-in // add photo.jpeg to replace",
             use_container_width=True,
         )
 
@@ -282,10 +293,11 @@ with left:
     html(
         """
         <span class="pill">Python</span>
-        <span class="pill">Software Development</span>
-        <span class="pill">Networking</span>
-        <span class="pill">Databases</span>
+        <span class="pill">C# / Blazor</span>
+        <span class="pill">Docker</span>
         <span class="pill">Linux</span>
+        <span class="pill">Homelab</span>
+        <span class="pill">Networking</span>
         <span class="pill">Local AI</span>
         """
     )
@@ -299,7 +311,8 @@ with right:
             <p class="muted">
                 I enjoy understanding how things work, trying new technologies,
                 and turning ideas into practical projects. Outside coding,
-                I'm usually gaming or learning something new.
+                I usually read comics or play games, getting lost in cyberpunk like a true gonk,
+                or learning something new.
             </p>
         </div>
         """
@@ -331,7 +344,8 @@ with tab_about:
                 the infrastructure that makes it run.
 
                 Lately, I've been trying to get deeper into networking because
-                I enjoy understanding how systems connect.
+                I enjoy understanding how systems connect. Running my own
+                homelab is where that curiosity turns into practice.
 
                 My approach is simple: build something, learn what I don't know,
                 and improve it one iteration at a time.
@@ -345,7 +359,7 @@ with tab_about:
                 and personal projects are where I test whether I actually
                 understand them.
 
-                Right now my focus is Python, databases, Linux, and how
+                Right now my focus is Python, C#, Docker, Linux, and how
                 networks move data from one place to another.
                 """
             )
@@ -358,6 +372,10 @@ with tab_about:
                 the game open.
 
                 That mindset carries over into how I debug and design software.
+
+                I'm also drawn to the neo-noir look, partly because I recently
+                got back into cyberpunk. It's the reason this whole portfolio
+                looks the way it does.
                 """
             )
 
@@ -369,7 +387,7 @@ with tab_about:
                 <p><b>Name</b><br>{NAME}</p>
                 <p><b>Program</b><br>{PROGRAM} · {YEAR}</p>
                 <p><b>Section</b><br>{SECTION}</p>
-                <p><b>Interests</b><br>Coding, networking, games</p>
+                <p><b>Interests</b><br>Coding, homelabs, networking, games, cyberpunk</p>
                 <p><b>Approach</b><br>Hands-on learning</p>
             </div>
             """

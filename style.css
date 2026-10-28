@@ -255,8 +255,20 @@ input, textarea {
 
 [data-testid="stMetricValue"] {
     font-family: 'Orbitron', sans-serif;
+    font-size: 1.7rem;
     color: __B__ !important;
     text-shadow: 0 0 12px __B__88;
+}
+
+[data-testid="stMetricValue"] > div {
+    overflow: visible !important;
+    text-overflow: clip !important;
+    white-space: nowrap !important;
+}
+
+[data-testid="stMetric"] {
+    min-width: 0;
+    overflow: visible;
 }
 
 [data-testid="stMetricLabel"] p {
